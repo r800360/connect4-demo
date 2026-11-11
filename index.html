@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Connect 4</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <h1>Connect 4</h1>
+    <p class="lede">The 2022 heuristic, the same heuristic with a fresh copy each reply, and a depth-limited search.</p>
+
+    <div class="row" role="group" aria-label="Engine">
+      <button type="button" class="choice" data-engine="2022">2022</button>
+      <button type="button" class="choice" data-engine="fixed">2022 fixed</button>
+      <button type="button" class="choice" data-engine="search" aria-pressed="true">Search</button>
+      <button type="button" class="choice" data-engine="two">Two players</button>
+    </div>
+
+    <div class="row" role="group" aria-label="Search depth">
+      <span class="label">Search depth</span>
+      <button type="button" class="choice" data-depth="4">4</button>
+      <button type="button" class="choice" data-depth="8" aria-pressed="true">8</button>
+      <button type="button" class="choice" data-depth="10">10</button>
+    </div>
+
+    <div class="row" role="group" aria-label="Your color">
+      <button type="button" class="choice" data-seat="1" aria-pressed="true">You play red</button>
+      <button type="button" class="choice" data-seat="2">You play yellow</button>
+    </div>
+
+    <div class="row" role="group" aria-label="Positions">
+      <button type="button" class="choice" data-pos="start">Start</button>
+      <button type="button" class="choice" data-pos="block">Block</button>
+      <button type="button" class="choice" data-pos="trap">Trap</button>
+      <button type="button" class="choice" data-pos="reset">Full column</button>
+    </div>
+
+    <p id="blurb"></p>
+
+    <div class="stage">
+      <div class="ticks" id="ticks"></div>
+      <div class="board" id="board"></div>
+      <div class="scores" id="scores"></div>
+      <p class="label" id="score-label"></p>
+    </div>
+
+    <p id="status" aria-live="polite"></p>
+    <button type="button" id="use" class="go">Play the highlighted move</button>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
